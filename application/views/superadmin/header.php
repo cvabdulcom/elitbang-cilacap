@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>BUFTER | Bunker Fresh Water Dermaga Tuks Pertamina</title>
+  <title>Pengguna | e-Litbang Kabupaten Cilacap</title>
   <link rel="shortcut icon" href="<?php echo base_url('assets/frontend/'); ?>/img/favicon.png">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet"
@@ -201,16 +201,13 @@
 
 </head>
 
-<body class="hold-transition sidebar-mini skin-blue-light fixed">
+<body class="hold-transition sidebar-mini skin-yellow fixed">
   <div class="wrapper">
     <header class="main-header">
 
       <!-- Logo -->
-      <a href="<?php echo base_url('dashboard'); ?>" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>B</b>TR</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b><i class="fa fa-ship"></i> BUFTER</b></span>
+      <a class="logo" href="<?php echo base_url('dashboard'); ?>">
+        <img src="<?php echo base_url(); ?>assets/frontend/img/logo-beranda.png" alt="" class="img-fluid" height="45" width="131">
       </a>
 
       <!-- Header Navbar: style can be found in header.less -->
@@ -227,7 +224,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="<?php echo base_url('assets/backend/') ?>dist/img/KOSONG.png" class="user-image"
                   alt="User Image">
-                <span class="hidden-xs"><?php echo $this->session->userdata('nama_bufter'); ?></span>
+                <span class="hidden-xs"><?php echo $this->session->userdata('nama_elitbang'); ?></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
@@ -235,9 +232,17 @@
                   <img src="<?php echo base_url('assets/backend/') ?>dist/img/KOSONG.png" class="img-circle"
                     alt="User Image">
                   <p>
-                    <?php echo $this->session->userdata('nama_bufter'); ?>
+                    <?php echo $this->session->userdata('nama_elitbang'); ?>
                     <small>
-                      Supervisor
+                    <?php 
+                      if($this->session->userdata('level_elitbang') == '0'){
+                        echo "Superadmin";
+                      }else if($this->session->userdata('level_elitbang') == '1'){
+                        echo "Kantor Bappeda";
+                      }else if($this->session->userdata('level_elitbang') == '2'){
+                        echo "Kantor Kesbangpol";
+                      }
+                    ?>
                     </small>
                   </p>
                 </li>

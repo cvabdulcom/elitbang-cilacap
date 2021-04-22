@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>bufter | Maintenance Activity MA3 Pertamina Area 70</title>
+    <title>Lockscren | e-Litbang Kabupaten Cilacap</title>
     <link href="<?php echo base_url('assets/frontend/'); ?>/img/favicon.png" rel="icon">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet"
@@ -202,13 +202,13 @@
 
 </head>
 
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-yellow layout-top-nav">
     <div class="wrapper">
         <header class="main-header">
             <nav class="navbar navbar-static-top">
                 <div class="container">
                     <div class="navbar-header">
-                    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/frontend/'); ?>img/logo.png" alt="" class="img-fluid" height="50" width="140" style="padding: 5px;"></a>
+                    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/frontend/'); ?>img/logo-beranda.png" alt="" class="img-fluid" height="50" width="140" style="padding: 5px;"></a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
@@ -222,16 +222,24 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="<?php echo base_url(); ?>/assets/backend/dist/img/KOSONG.png" class="user-image" alt="User Image">
                                     <span
-                                        class="hidden-xs"><?php echo $this->session->userdata('nama_bufter'); ?></span>
+                                        class="hidden-xs"><?php echo $this->session->userdata('nama_peserta_elitbang'); ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="user-header">
                                         <img src="<?php echo base_url('assets/backend/') ?>dist/img/KOSONG.png" class="img-circle" alt="User Image">
                                         <p>
-                                            <?php echo $this->session->userdata('nama_bufter'); ?>
+                                            <?php echo $this->session->userdata('nama_peserta_elitbang'); ?>
                                             <small>
-                                                <?php
-                                                    echo $this->session->userdata('jabatan_bufter');
+                                                <?php 
+                                                if($this->session->userdata('level_elitbang') == '0'){
+                                                    echo "Superadmin";
+                                                }else if($this->session->userdata('level_elitbang') == '1'){
+                                                    echo "Kantor Bappeda";
+                                                }else if($this->session->userdata('level_elitbang') == '2'){
+                                                    echo "Kantor Kesbangpol";
+                                                }else if($this->session->userdata('level_elitbang') == '3'){
+                                                    echo "Peserta";
+                                                }
                                                 ?>
                                             </small>
                                         </p>
@@ -239,7 +247,7 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-right">
-                                            <a href="<?php echo base_url('login/logout'); ?>"
+                                            <a href="<?php echo base_url('masuk/keluar'); ?>"
                                                 class="btn btn-default btn-flat">Sign out</a>
                                         </div>
                                     </li>
@@ -261,7 +269,7 @@
                 <!-- Automatic element centering -->
                 <div class="lockscreen-wrapper">
                     <div class="lockscreen-logo">
-                    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/frontend/'); ?>img/logo-login.png" alt="" class="img-fluid" height="70" width="230"></a>
+                    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/frontend/'); ?>img/logo.png" alt="" class="img-fluid" height="70" width="230"></a>
                     </div>
                     <!-- START LOCK SCREEN ITEM -->
                     <div class="lockscreen-item">
@@ -274,9 +282,9 @@
                         <!-- lockscreen credentials (contains the form) -->
                         <form class="lockscreen-credentials">
                             <div class="input-group">
-                                <input type="text" class="form-control" value="<?php echo $this->session->userdata('nama_bufter'); ?>">
+                                <input type="text" class="form-control" value="<?php echo $this->session->userdata('nama_peserta_elitbang'); ?>">
                                 <div class="input-group-btn">
-                                    <a href="<?php echo base_url('beranda'); ?>"><button type="button" class="btn"><i class="fa fa-arrow-right text-muted"></i></button></a>
+                                    <a href="<?php echo base_url('dashboard'); ?>"><button type="button" class="btn"><i class="fa fa-arrow-right text-muted"></i></button></a>
                                 </div>
                             </div>
                         </form>
@@ -288,7 +296,7 @@
                         Anda tidak memiliki akses ke halaman ini !
                     </div>
                     <div class="lockscreen-footer text-center">
-                        Copyright &copy; <b><a href="#" class="text-black">Alan Bufter</a></b><br>
+                        Copyright &copy; <b><a href="#" class="text-black">Bappeda Cilacap</a></b><br>
                         Developed by <a href="http://mitrasama.com/" target="_blank">Mitrasama</a>
                     </div>
                 </div>
@@ -300,9 +308,9 @@
         <!-- /.content-wrapper -->
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>MA 3 AREA 70</b>
+                <b>Bappeda Cilacap</b>
             </div>
-            <strong><a>bufter System</a></strong>
+            <strong><a>e-Litbang</a></strong>
         </footer>
 
         <!-- Add the sidebar's background. This div must be placed

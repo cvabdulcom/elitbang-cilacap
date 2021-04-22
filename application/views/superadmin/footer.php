@@ -1,8 +1,8 @@
 <footer class="main-footer">
   <div class="pull-right hidden-xs">
-    <b>MA 3 AREA 70</b>
+    <b>Bappeda Cilacap</b>
   </div>
-  <strong><a>Bufter System</a></strong>
+  <strong><a>e-Litbang</a></strong>
 </footer>
 
   <!-- Add the sidebar's background. This div must be placed

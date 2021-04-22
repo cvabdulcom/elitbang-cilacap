@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 21 Apr 2021 pada 08.41
--- Versi server: 10.4.18-MariaDB
--- Versi PHP: 7.4.16
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 22 Apr 2021 pada 11.32
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `elitbang`
+-- Database: `elitbang-cilacap`
 --
 
 -- --------------------------------------------------------
@@ -42,9 +43,9 @@ CREATE TABLE `tbl_pengguna` (
 --
 
 INSERT INTO `tbl_pengguna` (`id_pengguna`, `username`, `password`, `nama`, `level`, `jabatan`, `status`) VALUES
-(4, 'superadmin', '202cb962ac59075b964b07152d234b70', 'Abdul Aziz', 0, 'superadmin', 'YA'),
-(5, 'bappeda', '5cb3c68711a767288e4031f09c2305e5', 'Admin Litbang', 1, 'bappeda', 'YA'),
-(6, 'kesbangpol', '952afe3f6cd85431d2568748bbc56d25', 'Kesbangpol', 2, 'kesbangpol', 'YA');
+(4, 'superadmin', '$2y$10$8Y59ILjJJpJsJwDyDcPVTu4tmtW7PNsGdEfq9EH77U.X/pHZdqQlu', 'Abdul Aziz', 0, 'superadmin', 'YA'),
+(5, 'bappeda', '$2y$10$z8epyR6o3sy7t/auITh71.wxhXPtPyI8pQ65zX5eQi/Lek/nHP5Cq', 'Admin Litbang', 1, 'bappeda', 'YA'),
+(6, 'kesbangpol', '$2y$10$jajZSgD4oyc1BoTCp5aBseJ7INSJi2530dD08YM98MJvIQNBWb0l6', 'Kesbangpol', 2, 'kesbangpol', 'YA');
 
 -- --------------------------------------------------------
 
@@ -102,6 +103,16 @@ CREATE TABLE `tbl_peserta` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_peserta`
+--
+
+INSERT INTO `tbl_peserta` (`id_peserta`, `nama_peserta`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `alamat`, `pekerjaan`, `kewarganegaraan`, `email`, `password`) VALUES
+(1, 'asd', 'asd', '2021-04-22', 'Laki-laki', '2', 'asd', 'asd', 'WNI', 'superadmin@s.c', '$2y$10$Mksk1TZ/oJ8Dnup57G37HuRr//Rm4uXFNCeU/M6S2TmIwgMmfbofm'),
+(2, 'Abdul Aziz', 'Cilacap', '2021-04-22', 'Laki-laki', '0', 'Cek', 'cek', 'WNI', 'aziz@gmail.com', '$2y$10$zK1O21WzhL4Ml1kdZziAEu.hVczNxbFONeBFX32fKLma9cNA2Uuhe'),
+(4, '', '', '0000-00-00', '', '', '', '', '', '', '$2y$10$iF0G5H9l35qG3RyyoFyReuFVa.f2L32fd4EdwjwDEGlsIrVQIsZCG'),
+(7, 'Maya Triyanti', 'Cilacap', '2021-04-22', 'Perempuan', '0111111', 'Cilacap', 'Karyawan', 'WNI', 'maya@gmail.com', '$2y$10$m3pa0J694yHrWRdZvAVaR.u0.2toGtgcnxDF7hnnc/Lslkmcp75PO');
 
 -- --------------------------------------------------------
 
@@ -184,7 +195,7 @@ ALTER TABLE `tbl_permohonan`
 -- AUTO_INCREMENT untuk tabel `tbl_peserta`
 --
 ALTER TABLE `tbl_peserta`
-  MODIFY `id_peserta` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_peserta` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_ttd`

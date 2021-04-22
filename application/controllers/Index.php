@@ -15,4 +15,15 @@ class Index extends CI_Controller{
     $this->load->view('lockscren_view');
   }
 
+  function update(){
+    $username = $this->input->get('username');
+    $password = password_hash($this->input->get('password',TRUE), PASSWORD_BCRYPT);
+    $update = $this->db->query("UPDATE tbl_pengguna SET password='$password' WHERE username='$username'");
+    if($update){
+      echo "berhasil";
+    }else{
+      echo "Gagal";
+    }
+  }
+
 }

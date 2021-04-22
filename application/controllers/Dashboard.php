@@ -2,7 +2,7 @@
 class Dashboard extends CI_Controller{
   function __construct(){
     parent::__construct();
-    if($this->session->userdata('logged_in_elitbang') !== TRUE && $this->session->userdata('status_elitbang')==='YA'){
+    if($this->session->userdata('logged_in_elitbang') !== TRUE && $this->session->userdata('status_elitbang')!=='YA'){
       redirect('/');
     }
   }
@@ -21,6 +21,10 @@ class Dashboard extends CI_Controller{
       $this->load->view('kesbangpol/header');
       $this->load->view('kesbangpol/dashboard');
       $this->load->view('kesbangpol/footer');
+    }else if($this->session->userdata('jabatan_elitbang')==='peserta' && $this->session->userdata('level_elitbang')==='3'){
+      $this->load->view('peserta/header');
+      $this->load->view('peserta/dashboard');
+      $this->load->view('peserta/footer');
     }else{ 
       redirect('index/lockscren');
     }

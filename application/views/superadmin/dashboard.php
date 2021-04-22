@@ -9,16 +9,24 @@
           class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p><?php echo $this->session->userdata('nama_bufter'); ?></p>
+        <p><?php echo $this->session->userdata('nama_elitbang'); ?></p>
         <a href="#"><i class="fa fa-circle text-success"></i>
-          Superadmin
+          <?php 
+            if($this->session->userdata('level_elitbang') == '0'){
+              echo "Superadmin";
+            }else if($this->session->userdata('level_elitbang') == '1'){
+              echo "Kantor Bappeda";
+            }else if($this->session->userdata('level_elitbang') == '2'){
+              echo "Kantor Kesbangpol";
+            }
+          ?>
         </a>
       </div>
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="active">
-        <a href="#">
+        <a href="<?php echo base_url('dashboard'); ?>">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
@@ -28,55 +36,10 @@
           <i class="fa fa-legal"></i> <span>Master Request</span>
         </a>
       </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-crop"></i> <span>Tank Ticket</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-money"></i> <span>Bukti Bayar</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-upload"></i> <span>Upload Dokumen</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-inbox"></i> <span>Upload Rekapitulasi</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-users"></i> <span>Data Pengguna</span>
-        </a>
-      </li>
       <li class="header">REPORTING NAVIGATION</li>
       <li>
         <a href="#">
           <i class="fa fa-file-text-o"></i> <span>Laporan Request</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-file-text-o"></i> <span>Laporan Tank Ticket</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-file-text-o"></i> <span>Laporan Pembayaran</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-file-text-o"></i> <span>Laporan Dokumen</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <i class="fa fa-file-text-o"></i> <span>Laporan Rekapitulasi</span>
         </a>
       </li>
     </ul>

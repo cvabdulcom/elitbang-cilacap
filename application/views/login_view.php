@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Login | Bunker Fresh Water Dermaga Tuks Pertamina</title>
+  <title>Login | e-Litbang Kabupaten Cilacap</title>
   <!-- Tell the browser to be responsive to screen width -->
   <link href="<?php echo base_url('assets/frontend/'); ?>/img/favicon.png" rel="icon">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -26,16 +26,15 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?php echo base_url('/'); ?>"><b>BUFTER</b></a>
-    <!-- <a href="<?php //echo base_url(); ?>"><img src="<?php //echo base_url('assets/frontend/'); ?>img/logo-login.png" alt="" class="img-fluid" height="70" width="230"></a> -->
+    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/frontend/'); ?>img/logo.png" alt="" class="img-fluid" height="70" width="210"></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Bunker Fresh Water</p>
+    <p class="login-box-msg">Halaman Masuk Pengguna</p>
     <form action="<?php echo base_url('login/auth'); ?>" method="post">
       <div class="form-group has-feedback">
-        <input type="text" name="email" class="form-control" placeholder="Username">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <input type="text" name="username" class="form-control" placeholder="Username">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <input type="password" name="password" class="form-control" placeholder="Password">
@@ -45,17 +44,17 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
+              <input type="checkbox"> Ingat Saya
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-sign-in"></i> Login</button>
+          <button type="submit" class="btn btn-warning btn-block btn-flat"><i class="fa fa-sign-in"></i> Masuk</button>
         </div>
         <!-- /.col -->
       </div><br>
-      <a href="<?php echo base_url(); ?>" class="text-center"><i class="fa fa-arrow-circle-o-left"></i> Back to home</a>
+      <a href="<?php echo base_url(); ?>" class="text-center"><i class="fa fa-arrow-circle-o-left"></i> Kembali ke Beranda</a>
     </form>
   </div>
   <!-- /.login-box-body -->
