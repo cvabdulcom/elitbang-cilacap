@@ -85,11 +85,11 @@
         <input type="email" name="email" id="email" class="form-control" placeholder="Contoh : aziz@emailku.com">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
-      <div class="form-group has-feedback">
+      <!-- <div class="form-group has-feedback">
         <label>Password</label>
         <input type="password" name="password" id="password" class="form-control" placeholder="Contoh : *******">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
+      </div> -->
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
@@ -150,7 +150,7 @@
     var pekerjaan = $('#pekerjaan').val();
     var kewarganegaraan = $('#kewarganegaraan').val();
     var email = $('#email').val();
-    var password = $('#password').val();
+    // var password = $('#password').val();
     $.ajax({
       type: "POST",
       url: "<?php echo base_url('mendaftar/simpan'); ?>",
@@ -164,13 +164,13 @@
               pekerjaan: pekerjaan,
               kewarganegaraan: kewarganegaraan,
               email: email,
-              password: password,
+              // password: password,
             },
       dataType: "json",
       success: function(data){
         if(data == true){
           swal({
-            title: "Pendaftaran Berhasil, Silahkan Masuk",
+            title: "Pendaftaran Berhasil, Silahkan Periksa Email Anda.",
             type: "success",
             confirmButtonColor: "#2C3FF9",
             showCancelButton: false,
@@ -180,7 +180,7 @@
             location.reload();
           });
         }else{
-          alert("Gagal Mendaftar");
+          alert("Gagal Mendaftar: Diakibatkan karena email atau telepon sudah terdaftar");
         }
       }
     });

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Apr 2021 pada 11.32
+-- Waktu pembuatan: 27 Apr 2021 pada 15.46
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -109,10 +109,7 @@ CREATE TABLE `tbl_peserta` (
 --
 
 INSERT INTO `tbl_peserta` (`id_peserta`, `nama_peserta`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `no_hp`, `alamat`, `pekerjaan`, `kewarganegaraan`, `email`, `password`) VALUES
-(1, 'asd', 'asd', '2021-04-22', 'Laki-laki', '2', 'asd', 'asd', 'WNI', 'superadmin@s.c', '$2y$10$Mksk1TZ/oJ8Dnup57G37HuRr//Rm4uXFNCeU/M6S2TmIwgMmfbofm'),
-(2, 'Abdul Aziz', 'Cilacap', '2021-04-22', 'Laki-laki', '0', 'Cek', 'cek', 'WNI', 'aziz@gmail.com', '$2y$10$zK1O21WzhL4Ml1kdZziAEu.hVczNxbFONeBFX32fKLma9cNA2Uuhe'),
-(4, '', '', '0000-00-00', '', '', '', '', '', '', '$2y$10$iF0G5H9l35qG3RyyoFyReuFVa.f2L32fd4EdwjwDEGlsIrVQIsZCG'),
-(7, 'Maya Triyanti', 'Cilacap', '2021-04-22', 'Perempuan', '0111111', 'Cilacap', 'Karyawan', 'WNI', 'maya@gmail.com', '$2y$10$m3pa0J694yHrWRdZvAVaR.u0.2toGtgcnxDF7hnnc/Lslkmcp75PO');
+(1, 'Maya Triyanti', 'Cilacap', '1990-06-05', 'Perempuan', '081568433359', 'Ds. Bandasari Kec. Dukuhturi Kabupaten tegal.', 'Karyawan', 'WNI', 'cvabdulcom@gmail.com', '$2y$10$QI5jobvOtt3ZUCBnt/f9J.wgbJ/cvCRGJxa.hqp3dULqu2ibSqC5G');
 
 -- --------------------------------------------------------
 
@@ -195,7 +192,7 @@ ALTER TABLE `tbl_permohonan`
 -- AUTO_INCREMENT untuk tabel `tbl_peserta`
 --
 ALTER TABLE `tbl_peserta`
-  MODIFY `id_peserta` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_peserta` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_ttd`

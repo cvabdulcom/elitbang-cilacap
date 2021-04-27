@@ -47,7 +47,53 @@ class Dashboard extends CI_Controller{
    */
   /** FUNCTION */
   /** ------------------------------------------------------------------ */
-  
+  function Data_profil(){
+    $id_peserta = $this->input->post('id_peserta');
+    $nama_peserta = $this->input->post('nama_peserta');
+    $tempat_lahir = $this->input->post('tempat_lahir');
+    $tanggal_lahir = $this->input->post('tanggal_lahir');
+    $jenis_kelamin = $this->input->post('jenis_kelamin');
+    $no_hp = $this->input->post('no_hp');
+    $alamat = $this->input->post('alamat');
+    $pekerjaan = $this->input->post('pekerjaan');
+    $kewarganegaraan = $this->input->post('kewarganegaraan');
+
+    $simpan = $this->db->query("UPDATE tbl_peserta SET nama_peserta='$nama_peserta',tempat_lahir='$tempat_lahir',tanggal_lahir='$tanggal_lahir',jenis_kelamin='$jenis_kelamin',no_hp='$no_hp',alamat='$alamat',pekerjaan='$pekerjaan',kewarganegaraan='$kewarganegaraan' WHERE id_peserta='$id_peserta'");
+
+    if($simpan){
+      redirect('dashboard');
+    }else{
+      $link = base_url('dashboard');
+      echo "<script language=\"javascript\">alert(\"Gagal Update !\");document.location.href='$link';</script>";
+    }
+  }
+
+  function Ganti_password(){
+    $password_lama = $this->input->post('password_lama');
+    $password_baru = $this->input->post('password_baru');
+    $konfir_ulang = $this->input->post('konfir_ulang');
+    $email = $this->session->userdata('email_elitbang');
+    $katakunci = $this->db->query("SELECT password FROM tbl_peserta WHERE email='$email' LIMIT 1")->row()->password;
+    if(password_verify($password_lama, $katakunci)){
+      if($password_baru == $konfir_ulang){
+        $password_simpan = password_hash($password_baru, PASSWORD_BCRYPT);
+        $simpan = $this->db->query("UPDATE tbl_peserta SET password='$password_simpan' WHERE email='$email'");
+        if($simpan){
+          $link = base_url('dashboard');
+          echo "<script language=\"javascript\">alert(\"Sukses ganti password !\");document.location.href='$link';</script>";
+        }else{
+          $link = base_url('dashboard');
+          echo "<script language=\"javascript\">alert(\"Gagal Simpan !\");document.location.href='$link';</script>";
+        }
+      }else{
+        $link = base_url('dashboard');
+        echo "<script language=\"javascript\">alert(\"Konfirmasi ulang password salah !\");document.location.href='$link';</script>";
+      }
+    }else{
+      $link = base_url('dashboard');
+      echo "<script language=\"javascript\">alert(\"Password lama salah !\");document.location.href='$link';</script>";
+    }
+  }
   /** ------------------------------------------------------------------ */
   /** FUNCTION */
 
