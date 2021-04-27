@@ -29,6 +29,56 @@ class Dashboard extends CI_Controller{
       redirect('index/lockscren');
     }
   }
+
+  function Input_permohonan(){
+    if($this->session->userdata('jabatan_elitbang')==='peserta' && $this->session->userdata('level_elitbang')==='3'){
+      $this->load->view('peserta/header');
+      $this->load->view('peserta/input_permohonan');
+      $this->load->view('peserta/footer');
+    }else{ 
+      redirect('index/lockscren');
+    }
+  }
+
+  function Permohonan_penelitian(){
+    if($this->session->userdata('jabatan_elitbang')==='peserta' && $this->session->userdata('level_elitbang')==='3'){
+      $this->load->view('peserta/header');
+      $this->load->view('peserta/permohonan_penelitian');
+      $this->load->view('peserta/footer');
+    }else{ 
+      redirect('index/lockscren');
+    }
+  }
+
+  function Permohonan_pengabdian(){
+    if($this->session->userdata('jabatan_elitbang')==='peserta' && $this->session->userdata('level_elitbang')==='3'){
+      $this->load->view('peserta/header');
+      $this->load->view('peserta/permohonan_pengabdian');
+      $this->load->view('peserta/footer');
+    }else{ 
+      redirect('index/lockscren');
+    }
+  }
+
+  function Riwayat_penelitian(){
+    if($this->session->userdata('jabatan_elitbang')==='peserta' && $this->session->userdata('level_elitbang')==='3'){
+      $this->load->view('peserta/header');
+      $this->load->view('peserta/riwayat_penelitian');
+      $this->load->view('peserta/footer');
+    }else{ 
+      redirect('index/lockscren');
+    }
+  }
+
+  function Riwayat_pengabdian(){
+    if($this->session->userdata('jabatan_elitbang')==='peserta' && $this->session->userdata('level_elitbang')==='3'){
+      $this->load->view('peserta/header');
+      $this->load->view('peserta/riwayat_pengabdian');
+      $this->load->view('peserta/footer');
+    }else{ 
+      redirect('index/lockscren');
+    }
+  }
   /** ------------------------------------------------------------------ */
   /**
    * 

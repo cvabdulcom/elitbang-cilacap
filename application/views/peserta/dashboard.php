@@ -24,29 +24,29 @@
       </li>
       <li class="header">MENU NAVIGATION</li>
       <li>
-        <a href="#">
+        <a href="<?php echo base_url('dashboard/input_permohonan'); ?>">
           <i class="fa fa-plus-square"></i> <span>Input Permohonan</span>
         </a>
       </li>
       <li class="header">MENU REPORTING</li>
       <li>
-        <a href="#">
+        <a href="<?php echo base_url('dashboard/permohonan_penelitian'); ?>">
           <i class="fa fa-hourglass-1"></i> <span>Permohonan Penelitian</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="<?php echo base_url('dashboard/permohonan_pengabdian'); ?>">
           <i class="fa fa-street-view"></i> <span>Permohonan Pengabdian</span>
         </a>
       </li>
       <li class="header">MENU HISTORY</li>
       <li>
-        <a href="#">
+        <a href="<?php echo base_url('dashboard/riwayat_penelitian'); ?>">
           <i class="fa fa-circle-o"></i> <span>Riwayat Penelitian</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="<?php echo base_url('dashboard/riwayat_pengabdian'); ?>">
           <i class="fa fa-circle-o"></i> <span>Riwayat Pengabdian</span>
         </a>
       </li>
