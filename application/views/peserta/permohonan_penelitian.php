@@ -75,7 +75,85 @@
   <!-- Main content -->
   <section class="content">
 
-    
+    <div class="box box-warning">
+      <div class="box-body chart-responsive">                  
+        <div class="form-horizontal table-responsive">
+          <table class="table table-bordered table-hover" id="laporan">
+            <thead>
+              <tr class="bg-warning">
+                <th class="text-center" width="10">No</th>
+                <th class="text-center">Nama</th>
+                <th class="text-center">Jenis Permohonan</th>
+                <th class="text-center">Surat Dari</th>
+                <th class="text-center">Tanggal Permohonan</th>
+                <th class="text-center">Status</th>
+                <th class="text-center"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $no=0;
+                $id_peserta = $this->session->userdata('id_peserta_elitbang');
+                foreach($this->db->query("SELECT * FROM tbl_permohonan WHERE jenis_permohonan='Penelitian' AND id_peserta='$id_peserta' AND status_permohonan != 'terverifikasi' ORDER BY id_permohonan DESC")->result_array() as $tampil):
+                  $no++;
+                  $id_permohonan = $tampil['id_permohonan'];
+                  $id_peserta = $tampil['id_peserta'];
+                  $jenis_permohonan = $tampil['jenis_permohonan'];
+                  $surat_dari = $tampil['surat_dari'];
+                  $tujuan = $tampil['tujuan'];
+                  $judul = $tampil['judul'];
+                  $lokasi = $tampil['lokasi'];
+                  $awal_pelaksanaan = $tampil['awal_pelaksanaan'];
+                  $akhir_pelaksanaan = $tampil['akhir_pelaksanaan'];
+                  $penanggung_jawab = $tampil['penanggung_jawab'];
+                  $narahubung = $tampil['narahubung'];
+                  $tanggal_permohonan = $tampil['tanggal_permohonan'];
+                  $status_permohonan = $tampil['status_permohonan'];
+                  $no_rekomendasi = $tampil['no_rekomendasi'];
+                  $awal_rekomendasi = $tampil['awal_rekomendasi'];
+                  $akhir_rekomendasi = $tampil['akhir_rekomendasi'];
+                  $tanggal_rekomendasi = $tampil['tanggal_rekomendasi'];
+                  $status_rekomendasi = $tampil['status_rekomendasi'];
+                  $no_izin = $tampil['no_izin'];
+                  $awal_berlaku = $tampil['awal_berlaku'];
+                  $akhir_berlaku = $tampil['akhir_berlaku'];
+                  $tanggal_izin = $tampil['tanggal_izin'];
+                  $ttd_bappeda = $tampil['ttd_bappeda'];
+                  $ttd_kesbangpol = $tampil['ttd_kesbangpol'];
+                  $berkas_permohonan = $tampil['berkas_permohonan'];
+                  $berkas_laporan = $tampil['berkas_laporan'];
+                  $tembusan_rekomendasi = $tampil['tembusan_rekomendasi'];
+                  $tembusan_izin = $tampil['tembusan_izin'];
+              ?>
+                <tr>
+                  <td class="text-center"><?php echo $no; ?></td>
+                  <td class="text-left"><?php echo $this->db->query("SELECT * FROM tbl_peserta WHERE id_peserta='$id_peserta'")->row()->nama_peserta; ?></td>
+                  <td class="text-center"><?php echo $jenis_permohonan; ?></td>
+                  <td class="text-left"><?php echo $surat_dari; ?></td>
+                  <td class="text-center"><?php $new = strtotime($tanggal_permohonan); $newDate = date('d F Y', $new);  echo $newDate; ?></td>
+                  <td class="text-center">
+                    <?php
+                      if($status_permohonan == 'menunggu-verifikasi-bappeda'){
+                        echo '<span class="label label-warning">menunggu-verifikasi-bappeda</span>';
+                      }else if($status_permohonan == 'menunggu-verifikasi-kesbangpol'){
+                        echo '<span class="label label-info">menunggu-verifikasi-kesbangpol</span>';
+                      }else if($status_permohonan == 'terverifikasi'){
+                        echo '<span class="label label-success">terverifikasi</span>';
+                      }else{
+                        echo '<span class="label label-danger">ditolak</span>';
+                      }
+                    ?>
+                  </td>
+                  <td class="text-right" width="10">
+                    <a href="<?php echo base_url('dashboard/detail_permohonan?id_permohonan').$id_permohonan."&jenis_permohonan=".$jenis_permohonan; ?>"><button class="btn btn-info btn-flat btn-xs">Detail <i class="fa fa-list"></i></button></a>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>   
+        </div>   
+      </div>                    
+    </div>
 
   </section>
   <!-- /.content -->

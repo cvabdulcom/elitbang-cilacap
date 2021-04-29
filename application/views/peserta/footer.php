@@ -2,7 +2,7 @@
   <div class="pull-right hidden-xs">
     <b>Bappeda Cilacap</b>
   </div>
-  <strong><a>e-Litbang</a></strong>
+  <strong><a>e-Litbang</a> | Developed by <a href="http://mitrasama.com/" target="_blank">Mitrasama</a></strong>
 </footer>
 
   <!-- Add the sidebar's background. This div must be placed
@@ -43,14 +43,14 @@
 
 <script>
   $(function () {
-    $('#example2').DataTable({
+    $('#laporan').DataTable({
       'paging'      : true,
       'lengthChange': true,
       'searching'   : true,
-      'ordering'    : false,
+      'ordering'    : true,
       'info'        : true,
-      'autoWidth'   : false,
-      'pageLength'  : 50
+      'autoWidth'   : true,
+      'pageLength'  : 10
     });
   })
 </script>

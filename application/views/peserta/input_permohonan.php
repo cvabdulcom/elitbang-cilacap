@@ -74,9 +74,66 @@
 
   <!-- Main content -->
   <section class="content">
-
-    
-
+    <div class="box box-warning">
+      <form action="<?php echo base_url('dashboard/simpan_permohonan'); ?>" method="POST" enctype='multipart/form-data'>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="jenis_permohonan">Jenis Permohonan</label>
+                <select name="jenis_permohonan" id="jenis_permohonan" class="form-control" required>
+                  <option value="">-</option>
+                  <option value="Penelitian">Penelitian</option>
+                  <option value="Pengabdian">Pengabdian</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tujuan">Tujuan</label>
+                <input type="text" class="form-control" id="tujuan" name="tujuan" placeholder="Contoh : Penyusunan Skripsi/Penelitian/Tugas Akhir" required>
+              </div>
+              <div class="form-group">
+                <label for="surat_dari">Surat dari & Nomor surat</label>
+                <input type="text" class="form-control" id="surat_dari" name="surat_dari" placeholder="Contoh : Dekan Fakultas Teknik Nomor : XX/12/<?php echo date('Y'); ?>" required>
+              </div>
+              <div class="form-group">
+                <label for="judul">Judul</label>
+                <input type="text" class="form-control" id="judul" name="judul" placeholder="Contoh : Pengembangan Jaringan Sistem Smart City Cilacap" required>
+              </div>
+              <div class="form-group">
+                <label for="lokasi">Lokasi</label>
+                <textarea name="lokasi" id="lokasi" rows="3" class="form-control" required placeholder="Contoh : Kelurahan Sidanegara, Dinas Kominfo, Kantor Bappeda"></textarea>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="awal_pelaksanaan">Awal Pelaksanaan</label>
+                <input type="date" class="form-control" id="awal_pelaksanaan" name="awal_pelaksanaan" required>
+              </div>
+              <div class="form-group">
+                <label for="akhir_pelaksanaan">Akhir Pelaksanaan</label>
+                <input type="date" class="form-control" id="akhir_pelaksanaan" name="akhir_pelaksanaan" required>
+              </div>
+              <div class="form-group">
+                <label for="penanggung_jawab">Penanggung Jawab</label>
+                <input type="text" class="form-control" id="penanggung_jawab" name="penanggung_jawab" placeholder="Contoh : Dr.Eng. Abdul Aziz, S.Kom., M.Kom." required>
+              </div>
+              <div class="form-group">
+                <label for="narahubung">Narahubung Kontak(HP/WA)</label>
+                <input type="text" class="form-control" id="narahubung" name="narahubung" placeholder="Contoh : +628564732XXXX" required>
+              </div>
+              <div class="form-group">
+                <label for="berkas_permohonan">Upload Berkas Permohonan (Pengantar dari Kampus/Instansi) Max 1 MB</label>
+                <input type="file" id="berkas_permohonan" name="berkas_permohonan" class="form-control" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-footer">
+          <a href="<?php echo base_url('dashboard/input_permohonan'); ?>"><button class="btn btn-default btn-flat active pull-left" type="button"><i class="fa fa-retweet"></i> Batal</button></a>
+          <button class="btn btn-success btn-flat pull-right" type="submit"><i class="fa fa-save"></i> Simpan</button>
+        </div>
+      </form>
+    </div>
   </section>
-  <!-- /.content -->
 </div>
